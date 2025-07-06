@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Creativity Spark Studio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <canvas id="bg-3d"></canvas>
+  <div class="container glass">
+    <header class="header">
+      <h1 class="spark-title">⚡ Creativity Spark Studio ⚡</h1>
+      <p class="subtitle">Unleash your imagination with AI, 3D, and thunderous inspiration!</p>
+    </header>
+    <main>
+      <section class="chat-section">
+        <div class="chat-container glass">
+          <div id="chatBox" class="chat-box"></div>
+          <form id="chatForm" class="chat-form">
+            <input id="chatInput" type="text" placeholder="Ask anything creative..." autocomplete="off" required />
+            <button type="submit" class="spark-btn">Send</button>
+          </form>
+        </div>
+      </section>
+      <section class="prompt-section">
+        <div class="prompt-card glass">
+          <h2>Creative Prompts</h2>
+          <div id="promptList"></div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>Made with ⚡ and imagination. <a href="#" id="shareBtn">Share Online</a></p>
+    </footer>
+  </div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

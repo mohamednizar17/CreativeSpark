@@ -1,0 +1,250 @@
+:root {
+  --primary-color: #ff6f61;
+  --secondary-color: #8b5cf6;
+  --accent-color: #10b981;
+  --bg-gradient: linear-gradient(135deg, #0f2027, #2c5364, #ff6f61, #8b5cf6, #10b981);
+  --text-dark: #1f2937;
+  --text-light: #fff;
+  --card-bg: rgba(255, 255, 255, 0.92);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', 'Comic Neue', cursive, sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+#bg-3d {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(12px);
+}
+
+.glass {
+  background: rgba(255,255,255,0.18);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.12);
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+}
+
+.spark-title {
+  font-family: 'Orbitron', 'Comic Neue', cursive;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 0 16px #ff6f61, 0 0 32px #8b5cf6;
+  animation: thunder 2s infinite alternate;
+  letter-spacing: 2px;
+}
+
+@keyframes thunder {
+  0% { text-shadow: 0 0 16px #ff6f61, 0 0 32px #8b5cf6; }
+  50% { text-shadow: 0 0 32px #fff, 0 0 64px #10b981; }
+  100% { text-shadow: 0 0 16px #ff6f61, 0 0 32px #8b5cf6; }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  opacity: 0.85;
+  margin-top: 0.8rem;
+  text-shadow: 0 2px 8px #0002;
+  animation: fadeIn 1.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.chat-section {
+  margin-bottom: 2rem;
+}
+
+.chat-container {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.22);
+  transition: box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  max-height: 60vh;
+}
+
+.chat-box {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7em;
+}
+
+.msg {
+  padding: 0.7em 1.2em;
+  border-radius: 16px;
+  max-width: 80%;
+  word-break: break-word;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px #0001;
+  animation: fadeInMsg 0.4s;
+}
+
+@keyframes fadeInMsg {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+.msg.user {
+  align-self: flex-end;
+  background: linear-gradient(90deg, #ff6f61, #8b5cf6);
+  color: #fff;
+}
+
+.msg.assistant {
+  align-self: flex-start;
+  background: linear-gradient(90deg, #10b981, #8b5cf6);
+  color: #fff;
+}
+
+.chat-form {
+  display: flex;
+  gap: 0.5em;
+}
+
+#chatInput {
+  flex: 1;
+  border-radius: 12px;
+  border: 2px solid #8b5cf6;
+  padding: 0.8em 1em;
+  font-size: 1.1em;
+  background: rgba(255,255,255,0.7);
+  transition: border 0.2s;
+}
+
+#chatInput:focus {
+  border: 2px solid #ff6f61;
+  outline: none;
+}
+
+.spark-btn {
+  background: linear-gradient(90deg, #ff6f61, #8b5cf6, #10b981);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 2rem;
+  font-size: 1.2rem;
+  font-family: 'Comic Neue', cursive;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #8b5cf6;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.spark-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.spark-btn:hover::before {
+  left: 100%;
+}
+
+.spark-btn:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 4px 24px #ff6f61;
+}
+
+.prompt-section {
+  margin-bottom: 2rem;
+}
+
+.prompt-card {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.22);
+  transition: box-shadow 0.3s;
+}
+
+.prompt-card:hover {
+  box-shadow: 0 6px 32px #10b981;
+}
+
+.prompt-btn {
+  display: inline-block;
+  margin: 0.3em 0.3em 0 0;
+  padding: 0.5em 1.2em;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #8b5cf6, #10b981);
+  color: #fff;
+  border: none;
+  font-size: 1em;
+  font-family: 'Comic Neue', cursive;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #8b5cf6;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.prompt-btn:hover {
+  background: linear-gradient(90deg, #ff6f61, #8b5cf6);
+  transform: scale(1.08);
+}
+
+footer {
+  text-align: center;
+  color: #fff;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 8px #0002;
+}
+
+footer a {
+  color: #ff6f61;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #10b981;
+}
+
+@media (max-width: 600px) {
+  .container { padding: 1rem; }
+  .spark-title { font-size: 2rem; }
+  .chat-container, .prompt-card { padding: 1rem; }
+  .chat-container { height: 300px; }
+}

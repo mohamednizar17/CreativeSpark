@@ -1,0 +1,36 @@
+{
+    "responses": [
+        {
+            "age_group": "child",
+            "interest": "story writing",
+            "topic": "adventure",
+            "ai_prompt": "Imagine a brave young hero embarking on a quest to find a hidden treasure.",
+            "feedback": "Great start! Consider adding more details about the hero's background and motivations.",
+            "ai_feature": "plot_twist"
+        },
+        {
+            "age_group": "teen",
+            "interest": "story writing",
+            "topic": "romance",
+            "ai_prompt": "Write a story about two people from different worlds falling in love.",
+            "feedback": "Nice concept! Explore the challenges they face due to their differences.",
+            "ai_feature": "emotion_analysis"
+        },
+        {
+            "age_group": "adult",
+            "interest": "story writing",
+            "topic": "mystery",
+            "ai_prompt": "Create a suspenseful plot involving a detective solving a crime.",
+            "feedback": "Intriguing idea! Make sure to include red herrings to keep readers guessing.",
+            "ai_feature": "dialogue_suggestion"
+        },
+        {
+            "age_group": "senior",
+            "interest": "story writing",
+            "topic": "historical",
+            "ai_prompt": "Tell a story set during a significant historical event.",
+            "feedback": "Excellent choice! Research the era to add authenticity to your narrative.",
+            "ai_feature": "visualization_tip"
+        }
+    ]
+}
