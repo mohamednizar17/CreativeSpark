@@ -55,7 +55,7 @@ document.getElementById('chatForm').onsubmit = async function(e) {
   chatHistory.push({role: "assistant", content: "..."});
   renderChat();
   // Call backend (update URL after deploying backend)
-  const res = await fetch('https://your-backend.onrender.com/api/chat', {
+  const res = await fetch('https://creativespark-back.onrender.com', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ messages: chatHistory.filter(m => m.content !== "...") })
